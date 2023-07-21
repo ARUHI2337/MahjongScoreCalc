@@ -15,7 +15,7 @@ function clearInputs() {
       // Checkbox elements
       var checkboxElements = [
         'yukpaeCheckbox', 
-        'deagiCheckbox', 
+        'daegiCheckbox', 
         'chitoiCheckbox', 
         'pinghuCheckbox', 
         'oyaCheckbox', 
