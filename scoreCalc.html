@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>오프용 점수 계산</title>
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="scoreCalc.css">
+  <link rel="stylesheet" href="selectCss.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="/http/index.html" aria-label="홈으로 이동">홈</a>
+      <a href="/mahjong/site/project/controller/registrationPage" aria-label="등록 페이지로 이동">등록</a>
+      <a href="#" aria-label="내전기록 페이지로 이동">내전기록</a>
+      <a href="#" aria-label="순위표 페이지로 이동">순위표</a>
+      <a href="/http/scoreCalc.html" class="active" aria-label="점수계산 페이지로 이동">점수계산</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>오프용 점수 계산기</h1>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class">오야</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="oyaCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class">판수</th>
+            <td style="width: 80px;">
+              <div class="specific-class2">
+                <select name="score" id="panCountSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6~7</option>
+                  <option value="8">8~10</option>
+                  <option value="11">11~12</option>
+                  <option value="13">13~</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class">화료</th>
+            <th class="specific-class">멘젠</th>
+            <th class="specific-class">울음</th>
+          </tr>
+          <tr>
+            <th class="specific-class">론</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="menzenRonCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="uleumRonCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th class="specific-class">쯔모</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="menzenTsumoCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="uleumTsumoCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class">몸통<br>형태</th>
+            <th class="specific-class" style="white-space:  nowrap;">중장패</th>
+            <th class="specific-class" style="white-space:  nowrap;">요구패</th>
+          </tr>
+          <tr>
+            <th class="specific-class">민커</th>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="minkeJungjangSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="minkeYoguSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="specific-class">안커</th>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="ankerJungjangSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="ankerYoguSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="specific-class">민깡</th>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="minkkangJungjangSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="minkkangYoguSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="specific-class">안깡</th>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="ankkangJungjangSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+            <td style="width: 60px;">
+              <div class="specific-class2">
+                <select name="score" id="ankkangYoguSelect">
+                  <option value=""></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class" colspan="2">머리 형태</th>
+          </tr>
+          <tr>
+            <th class="specific-class">역패</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="yukpaeCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class" colspan="2">대기 형태</th>
+          </tr>
+          <tr>
+            <th class="specific-class">간짱변짱<br>단기</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="daegiCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <div class="table-content">
+        <table>
+          <tr>
+            <th class="specific-class" colspan="2">특수역</th>
+          </tr>
+          <tr>
+            <th class="specific-class">치또이</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="chitoiCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <th class="specific-class">핑후쯔모</th>
+            <td>
+              <label class="checkbox-container">
+                <input type="checkbox" id="pinghuCheckbox" />
+                <span class="checkmark"></span>
+              </label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h3><div id="resultText"></div></h3>
+    <div style="display: flex; margin-bottom: 20px;">
+      <button type="button" onclick="scoreCalc()">점수 계산</button>
+      <button type="button" onclick="clearInputs()" style="margin-left: 20px;">클리어</button>
+    </div>
+    <div class="left-align-text" style="margin-bottom: 20px;">
+      <p>◆판수 변동 역목록 멘젠/울음</p>
+      <p>・삼색동순:2/1</p>
+      <p>・일기통관:2/1</p>
+      <p>・찬타:2/1</p>
+      <p>・준찬타:3/2</p>
+      <p>・혼일:3/2</p>
+      <p>・청일:6/5</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="menu.js"></script>
+  <script src="timeCreate.js"></script>
+  <script src="clearInputs.js"></script>
+  <script src="scoreCalc.js"></script>
+</body>
+
+</html>

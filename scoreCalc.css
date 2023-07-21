@@ -1,0 +1,145 @@
+table {
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  border: 1px solid white;
+  overflow: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.table-content button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* 다른 스타일 속성들 */
+}
+
+th,
+td {
+  border: 1px solid white;
+  padding: 1px;
+  height: 27px;
+  text-align: center;
+}
+
+tr:first-child th.specific-class,
+tr:first-child td.specific-class,
+tr:not(:first-child) th.specific-class,
+tr:not(:first-child) td:first-child.specific-class {
+  background-color: rgba(99, 99, 99, 0.8);
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+tr:not(:first-child) td:not(:first-child) {
+  background-color: rgba(215, 215, 215, 0.8);
+  height: 100%;
+}
+
+td:not(:first-child) {
+  background-color: rgba(215, 215, 215, 0.8);
+  width: 50px;
+  height: 100%;
+}
+
+input[type="submit"],button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+td input[type="text"] {
+  box-sizing: border-box;
+  border: none;
+  background: rgba(215, 215, 215, 0.8);
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 40px;
+  width: 40px;
+  transform: translate(-50%,-37%);
+  background-color: transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 13px;
+  top: 8px;
+  width: 10px;
+  height: 15px;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.left-align-text p {
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+#resultText {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  border: 2px solid #555;
+}
+
+#resultText:empty {
+  background-color: transparent; /* 텍스트가 없을 때 투명으로 설정 */
+  border: none;
+}
