@@ -1,4 +1,6 @@
 function clearInputs() {
+
+    let resultTextElement = document.getElementById('resultText');
     // Select elements
     var selectElements = [
         'ankerJungjangSelect', 
@@ -34,4 +36,5 @@ function clearInputs() {
     for(var i = 0; i < checkboxElements.length; i++) {
       document.getElementById(checkboxElements[i]).checked = false;
     }
+    resultTextElement.textContent = "";
 }
