@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html>
 
+  <style>
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* 화면 크기에 따라 폰트 크기 조정 */
+    @media screen and (max-width: 600px) {
+      body {
+        font-size: 14px;
+      }
+    }
+    
+    /* 테이블 스타일에 따라 폰트 크기 조정 */
+    @media screen and (max-width: 450px) {
+      table {
+        font-size: 12px;
+      }
+    }
+    
+    /* h3 스타일에 따라 폰트 크기 조정 */
+    @media screen and (max-width: 350px) {
+      h3 {
+        font-size: 18px;
+      }
+    }
+    
+    /* 특수역 영역의 버튼 스타일 조정 */
+    @media screen and (max-width: 300px) {
+      .table-content button {
+        font-size: 10px;
+      }
+    }
+  </style>
 <head>
   <meta charset="UTF-8">
   <title>오프용 점수 계산</title>
