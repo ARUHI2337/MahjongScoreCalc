@@ -15,6 +15,7 @@ function scoreCalc() {
 
     let bodySum = 0;
     let ankSum = 0;
+    let kangSum = 0;
     for (let i = 0; i < bodyElements.length; i++) {
         let value = bodyElements[i].value;
         if (value !== "") {
@@ -22,6 +23,9 @@ function scoreCalc() {
             bodySum += intValue;
             if ([2, 3, 6, 7].includes(i)) {
                 ankSum += intValue;
+            }
+            if (i > 3) {
+                kangSum += intValue;
             }
         }
     }
@@ -43,7 +47,13 @@ function scoreCalc() {
     let panCountValue = parseInt(panCountElement.value);
 
     if (ankSum > 2 && panCountValue < 2) {
-        alert("최소 산안커가 포함된 역에 1판은 불가능한 조합입니다.");
+        alert("산안커가 포함된 역에 1판은 불가능한 조합입니다.");
+        resultTextElement.textContent = "";
+        return;
+    }
+
+    if (kangSum > 2 && panCountValue < 2) {
+        alert("산깡즈가 포함된 역에 1판은 불가능한 조합입니다.");
         resultTextElement.textContent = "";
         return;
     }
@@ -94,7 +104,7 @@ function scoreCalc() {
     let headCheckboxCount = 0;
     for (let i = 0; i < headCheckboxCount.length; i++) {
         if (headElements[i].checked) {
-            ePicCheckboxCount++;
+            headCheckboxCount++;
         }
     }
 
