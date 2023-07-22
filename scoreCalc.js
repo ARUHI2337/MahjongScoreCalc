@@ -102,7 +102,7 @@ function scoreCalc() {
     ];
 
     let headCheckboxCount = 0;
-    for (let i = 0; i < headCheckboxCount.length; i++) {
+    for (let i = 0; i < headElements.length; i++) {
         if (headElements[i].checked) {
             headCheckboxCount++;
         }
