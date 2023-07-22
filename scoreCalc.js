@@ -105,7 +105,7 @@ function scoreCalc() {
             resultTextElement.textContent = "";
             return;
         }
-        if (hwaryoCheckboxElements[1].checked || hwaryoCheckboxElements[3].checked ) {
+        if (hwaryoCheckboxElements[1].checked || hwaryoCheckboxElements[3].checked) {
             alert("치또이는 멘젠으로만 화료할 수 있습니다.");
             resultTextElement.textContent = "";
             return;
@@ -151,7 +151,7 @@ function scoreCalc() {
                 }
             }
         }
-        resultTextElement.textContent = resultText;
+        resultTextElement.textContent = "(25) " + resultText;
         return;
 
     }
@@ -201,7 +201,7 @@ function scoreCalc() {
                 resultText = '1300 / 2600'
             }
         }
-        resultTextElement.textContent = resultText;
+        resultTextElement.textContent = "(20) " + resultText;
         return;
     }
 
@@ -236,5 +236,417 @@ function scoreCalc() {
     if (score === 20) {
         score = 30;
     }
+
+    score = Math.ceil(score / 10) * 10;
+
+    if (panCountValue > 4 || panCountValue === 4 && score >= 40 || panCountValue === 3 && score >= 70) {
+        if (panCountValue > 5 && panCountValue < 8) {
+            if (oyaElement.checked) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '18000';
+                } else {
+                    resultText = '6000 ALL';
+                }
+            } else {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '12000';
+                } else {
+                    resultText = '3000 / 6000';
+                }
+            }
+        } else if (panCountValue > 7 && panCountValue < 11) {
+            if (oyaElement.checked) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '24000';
+                } else {
+                    resultText = '8000 ALL';
+                }
+            } else {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '16000';
+                } else {
+                    resultText = '4000 / 8000';
+                }
+            }
+        } else if (panCountValue > 10 && panCountValue < 13) {
+            if (oyaElement.checked) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '36000';
+                } else {
+                    resultText = '12000 ALL';
+                }
+            } else {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '24000';
+                } else {
+                    resultText = '6000 / 12000';
+                }
+            }
+        } else if (panCountValue > 12) {
+            if (oyaElement.checked) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '48000';
+                } else {
+                    resultText = '16000 ALL';
+                }
+            } else {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '32000';
+                } else {
+                    resultText = '8000 / 16000';
+                }
+            }
+        } else {
+            if (oyaElement.checked) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '12000';
+                } else {
+                    resultText = '4000 ALL';
+                }
+            } else {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '8000';
+                } else {
+                    resultText = '2000 / 4000';
+                }
+            }
+        }
+        resultTextElement.textContent = resultText;
+        return;
+    }
+
+    if (score === 30) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '1500';
+                } else {
+                    resultText = '500 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2900';
+                } else {
+                    resultText = '1000 ALL';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5800';
+                } else {
+                    resultText = '2000 ALL';
+                }
+            } else if (panCountValue === 4) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '11600';
+                } else {
+                    resultText = '3900 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '1000';
+                } else {
+                    resultText = '300 / 500';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2000';
+                } else {
+                    resultText = '500 / 1000';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3900';
+                } else {
+                    resultText = '1000 / 2000';
+                }
+            } else if (panCountValue === 4) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '7700';
+                } else {
+                    resultText = '2000 / 3900';
+                }
+            }
+        }
+    } else if (score === 40) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2000';
+                } else {
+                    resultText = '700 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3900';
+                } else {
+                    resultText = '1300 ALL';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '7700';
+                } else {
+                    resultText = '2600 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '1300';
+                } else {
+                    resultText = '400 / 700';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2600';
+                } else {
+                    resultText = '700 / 1300';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5200';
+                } else {
+                    resultText = '1300 / 2600';
+                }
+            }
+        }
+    } else if (score === 50) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2400';
+                } else {
+                    resultText = '800 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '4800';
+                } else {
+                    resultText = '1600 ALL';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '9600';
+                } else {
+                    resultText = '3200 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '1600';
+                } else {
+                    resultText = '400 / 800';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3200';
+                } else {
+                    resultText = '800 / 1600';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '6400';
+                } else {
+                    resultText = '1600 / 3200';
+                }
+            }
+        }
+    } else if (score === 60) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2900';
+                } else {
+                    resultText = '1000 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5800';
+                } else {
+                    resultText = '2000 ALL';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '11600';
+                } else {
+                    resultText = '3900 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2000';
+                } else {
+                    resultText = '500 / 1000';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3900';
+                } else {
+                    resultText = '1000 / 2000';
+                }
+            } else if (panCountValue === 3) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '7700';
+                } else {
+                    resultText = '2000 / 3900';
+                }
+            }
+        }
+    } else if (score === 70) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3400';
+                } else {
+                    resultText = '1200 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '6800';
+                } else {
+                    resultText = '2300 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2300';
+                } else {
+                    resultText = '600 / 1200';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '4500';
+                } else {
+                    resultText = '1200 / 2300';
+                }
+            }
+        }
+    } else if (score === 80) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3900';
+                } else {
+                    resultText = '1300 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '7700';
+                } else {
+                    resultText = '2600 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2600';
+                } else {
+                    resultText = '700 / 1300';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5200';
+                } else {
+                    resultText = '1300 / 2600';
+                }
+            }
+        }
+    } else if (score === 90) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '4400';
+                } else {
+                    resultText = '1500 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '8700';
+                } else {
+                    resultText = '2900 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '2900';
+                } else {
+                    resultText = '800 / 1500';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5800';
+                } else {
+                    resultText = '1500 / 2900';
+                }
+            }
+        }
+    } else if (score === 100) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '4800';
+                } else {
+                    resultText = '1600 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '9600';
+                } else {
+                    resultText = '3200 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3200';
+                } else {
+                    resultText = '800 / 1600';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '6400';
+                } else {
+                    resultText = '1600 / 3200';
+                }
+            }
+        }
+    } else if (score === 110) {
+        if (oyaElement.checked) {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '5300';
+                } else {
+                    resultText = '1800 ALL';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '10600';
+                } else {
+                    resultText = '3600 ALL';
+                }
+            }
+        } else {
+            if (panCountValue === 1) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '3600';
+                } else {
+                    resultText = '9000 / 1800';
+                }
+            } else if (panCountValue === 2) {
+                if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
+                    resultText = '7100';
+                } else {
+                    resultText = '1800 / 3600';
+                }
+            }
+        }
+    }
+    resultTextElement.textContent = "("+ score +") " + resultText;
+    return;
 
 }
