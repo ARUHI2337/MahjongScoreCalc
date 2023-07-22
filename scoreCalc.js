@@ -1,10 +1,103 @@
+document.addEventListener('DOMContentLoaded', function() {
+    let pinghuCheckbox = document.getElementById('pinghuCheckbox');
+    let chitoiCheckbox = document.getElementById('chitoiCheckbox');
+    let minkerJungjangSelect = document.getElementById('minkerJungjangSelect');
+    let minkerYoguSelect = document.getElementById('minkerYoguSelect');
+    let ankerJungjangSelect = document.getElementById('ankerJungjangSelect');
+    let ankerYoguSelect = document.getElementById('ankerYoguSelect');
+    let minkkangJungjangSelect = document.getElementById('minkkangJungjangSelect');
+    let minkkangYoguSelect = document.getElementById('minkkangYoguSelect');
+    let ankkangJungjangSelect = document.getElementById('ankkangJungjangSelect');
+    let ankkangYoguSelect = document.getElementById('ankkangYoguSelect');
+    let yukpaeCheckbox = document.getElementById('yukpaeCheckbox');
+    let doubleWindCheckbox = document.getElementById('doubleWindCheckbox');
+    let daegiCheckbox = document.getElementById('daegiCheckbox');
+
+    minkerJungjangSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    minkerYoguSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    ankerJungjangSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    ankerYoguSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    minkkangJungjangSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    minkkangYoguSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    ankkangJungjangSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    ankkangYoguSelect.addEventListener('change', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("커쯔를 설정할 수 없는 역입니다.");
+            this.value = "";
+        }
+    });
+
+    yukpaeCheckbox.addEventListener('click', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("머리 형태를 설정할 수 없는 역입니다.");
+            this.checked = false;
+        }
+    });
+
+    doubleWindCheckbox.addEventListener('click', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("머리 형태를 설정할 수 없는 역입니다.");
+            this.checked = false;
+        }
+    });
+
+    daegiCheckbox.addEventListener('click', function() {
+        if (pinghuCheckbox.checked || chitoiCheckbox.checked) {
+            alert("대기 형태를 설정할 수 없는 역입니다.");
+            this.checked = false;
+        }
+    });
+});
+
 function scoreCalc() {
 
     let resultTextElement = document.getElementById('resultText');
 
     const bodyElements = [
-        document.getElementById('minkeJungjangSelect'),
-        document.getElementById('minkeYoguSelect'),
+        document.getElementById('minkerJungjangSelect'),
+        document.getElementById('minkerYoguSelect'),
         document.getElementById('ankerJungjangSelect'),
         document.getElementById('ankerYoguSelect'),
         document.getElementById('minkkangJungjangSelect'),

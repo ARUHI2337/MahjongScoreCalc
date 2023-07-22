@@ -9,8 +9,8 @@ function clearInputs() {
         'minkkangYoguSelect', 
         'ankkangJungjangSelect', 
         'ankkangYoguSelect', 
-        'minkeJungjangSelect', 
-        'minkeYoguSelect', 
+        'minkerJungjangSelect', 
+        'minkerYoguSelect', 
         'panCountSelect'
     ];
       
