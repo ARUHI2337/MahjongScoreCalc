@@ -3,14 +3,14 @@ function scoreCalc() {
     let resultTextElement = document.getElementById('resultText');
 
     const bodyElements = [
-        document.getElementById('ankerJungjangSelect'),
-        document.getElementById('ankerYoguSelect'),
         document.getElementById('minkkangJungjangSelect'),
         document.getElementById('minkkangYoguSelect'),
-        document.getElementById('ankkangJungjangSelect'),
-        document.getElementById('ankkangYoguSelect'),
+        document.getElementById('ankerJungjangSelect'),
+        document.getElementById('ankerYoguSelect'),
         document.getElementById('minkeJungjangSelect'),
         document.getElementById('minkeYoguSelect'),
+        document.getElementById('ankkangJungjangSelect'),
+        document.getElementById('ankkangYoguSelect')
     ];
 
     let bodySum = 0;
@@ -44,7 +44,7 @@ function scoreCalc() {
 
     const ePicCheckboxElements = [
         document.getElementById('chitoiCheckbox'),
-        document.getElementById('pinghuCheckbox'),
+        document.getElementById('pinghuCheckbox')
     ];
 
     let hwaryoCheckboxCount = 0;
