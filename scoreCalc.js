@@ -3,20 +3,27 @@ function scoreCalc() {
     let resultTextElement = document.getElementById('resultText');
 
     const bodyElements = [
-        document.getElementById('minkkangJungjangSelect'),
-        document.getElementById('minkkangYoguSelect'),
-        document.getElementById('ankerJungjangSelect'),
-        document.getElementById('ankerYoguSelect'),
         document.getElementById('minkeJungjangSelect'),
         document.getElementById('minkeYoguSelect'),
+        document.getElementById('ankerJungjangSelect'),
+        document.getElementById('ankerYoguSelect'),
+        document.getElementById('minkkangJungjangSelect'),
+        document.getElementById('minkkangYoguSelect'),
         document.getElementById('ankkangJungjangSelect'),
         document.getElementById('ankkangYoguSelect')
     ];
 
     let bodySum = 0;
+    let ankSum = 0;
     for (let i = 0; i < bodyElements.length; i++) {
         let value = bodyElements[i].value;
-        bodySum += value === "" ? 0 : parseInt(value);
+        if (value !== "") {
+            let intValue = parseInt(value);
+            bodySum += intValue;
+            if ([2, 3, 6, 7].includes(i)) {
+                ankSum += intValue;
+            }
+        }
     }
 
     if (bodySum >= 5) {
@@ -34,6 +41,12 @@ function scoreCalc() {
     }
 
     let panCountValue = parseInt(panCountElement.value);
+
+    if (ankSum > 2 && panCountValue < 2) {
+        alert("최소 산안커가 포함된 역에 1판은 불가능한 조합입니다.");
+        resultTextElement.textContent = "";
+        return;
+    }
 
     const hwaryoCheckboxElements = [
         document.getElementById('menzenRonCheckbox'),
@@ -73,7 +86,25 @@ function scoreCalc() {
         return;
     }
 
-    const headElement = document.getElementById('yukpaeCheckbox');
+    const headElements = [
+        document.getElementById('yukpaeCheckbox'),
+        document.getElementById('doubleWindCheckbox')
+    ];
+
+    let headCheckboxCount = 0;
+    for (let i = 0; i < headCheckboxCount.length; i++) {
+        if (headElements[i].checked) {
+            ePicCheckboxCount++;
+        }
+    }
+
+    if (headCheckboxCount >= 2) {
+        alert("머리 형태는 하나만 설정 가능합니다.");
+        resultTextElement.textContent = "";
+        return;
+    }
+
+
 
     const daegiElement = document.getElementById('daegiCheckbox');
 
@@ -84,13 +115,13 @@ function scoreCalc() {
     let resultText = "";
 
     // 치또이 25부 고정
-    if (ePicCheckboxElements[0].checked && panCountValue < 5) {
+    if (ePicCheckboxElements[0].checked) {
         if (daegiElement.checked) {
             alert("치또이의 대기는 단기 취급하지 않습니다.");
             resultTextElement.textContent = "";
             return;
         }
-        if (headElement.checked) {
+        if (headElements[0].checked || headElements[1].checked) {
             alert("치또이는 특수역이라 머리를 설정하지 않습니다.");
             resultTextElement.textContent = "";
             return;
@@ -115,49 +146,50 @@ function scoreCalc() {
             resultTextElement.textContent = "";
             return;
         }
-
-        if (panCountValue == 2) {
-            if (oyaElement.checked) {
-                resultText = '2400';
-            } else {
-                resultText = '1600'
+        if (panCountValue < 5) {
+            if (panCountValue == 2) {
+                if (oyaElement.checked) {
+                    resultText = '2400';
+                } else {
+                    resultText = '1600'
+                }
+            } else if (panCountValue == 3) {
+                if (oyaElement.checked) {
+                    if (hwaryoCheckboxElements[0].checked) {
+                        resultText = '4800';
+                    } else {
+                        resultText = '1600 ALL';
+                    }
+                } else {
+                    if (hwaryoCheckboxElements[0].checked) {
+                        resultText = '3200';
+                    } else {
+                        resultText = '800 / 2600';
+                    }
+                }
+            } else if (panCountValue == 4) {
+                if (oyaElement.checked) {
+                    if (hwaryoCheckboxElements[0].checked) {
+                        resultText = '9600';
+                    } else {
+                        resultText = '3200 ALL';
+                    }
+                } else {
+                    if (hwaryoCheckboxElements[0].checked) {
+                        resultText = '6400';
+                    } else {
+                        resultText = '1600 / 3200';
+                    }
+                }
             }
-        } else if (panCountValue == 3) {
-            if (oyaElement.checked) {
-                if (hwaryoCheckboxElements[0].checked) {
-                    resultText = '4800';
-                } else {
-                    resultText = '1600 ALL';
-                }
-            } else {
-                if (hwaryoCheckboxElements[0].checked) {
-                    resultText = '3200';
-                } else {
-                    resultText = '800 / 2600';
-                }
-            }
-        } else if (panCountValue == 4) {
-            if (oyaElement.checked) {
-                if (hwaryoCheckboxElements[0].checked) {
-                    resultText = '9600';
-                } else {
-                    resultText = '3200 ALL';
-                }
-            } else {
-                if (hwaryoCheckboxElements[0].checked) {
-                    resultText = '6400';
-                } else {
-                    resultText = '1600 / 3200';
-                }
-            }
+            resultTextElement.textContent = "(25) " + resultText;
+            return;
         }
-        resultTextElement.textContent = "(25) " + resultText;
-        return;
 
     }
 
     // 핑후쯔모 20부 고정
-    if (ePicCheckboxElements[1].checked && panCountValue < 5) {
+    if (ePicCheckboxElements[1].checked) {
         if (!hwaryoCheckboxElements[2].checked) {
             alert("핑후쯔모에 멘젠쯔모 이외의 화료는 불가능한 조합입니다.");
             resultTextElement.textContent = "";
@@ -168,7 +200,7 @@ function scoreCalc() {
             resultTextElement.textContent = "";
             return;
         }
-        if (headElement.checked) {
+        if (headElements[0].checked || headElements[1].checked) {
             alert("핑후쯔모에 역패 머리는 불가능한 조합입니다.");
             resultTextElement.textContent = "";
             return;
@@ -178,31 +210,34 @@ function scoreCalc() {
             resultTextElement.textContent = "";
             return;
         }
-        if (panCountValue == 1) {
-            alert("핑후쯔모 1판은 불가능한 조합입니다.");
-            resultTextElement.textContent = "";
+        
+        if (panCountValue < 5) {
+            if (panCountValue == 1) {
+                alert("핑후쯔모 1판은 불가능한 조합입니다.");
+                resultTextElement.textContent = "";
+                return;
+            } else if (panCountValue == 2) {
+                if (oyaElement.checked) {
+                    resultText = '700 ALL';
+                } else {
+                    resultText = '400 / 700'
+                }
+            } else if (panCountValue == 3) {
+                if (oyaElement.checked) {
+                    resultText = '1300 ALL';
+                } else {
+                    resultText = '700 / 1300'
+                }
+            } else if (panCountValue == 4) {
+                if (oyaElement.checked) {
+                    resultText = '2600 ALL';
+                } else {
+                    resultText = '1300 / 2600'
+                }
+            }
+            resultTextElement.textContent = "(20) " + resultText;
             return;
-        } else if (panCountValue == 2) {
-            if (oyaElement.checked) {
-                resultText = '700 ALL';
-            } else {
-                resultText = '400 / 700'
-            }
-        } else if (panCountValue == 3) {
-            if (oyaElement.checked) {
-                resultText = '1300 ALL';
-            } else {
-                resultText = '700 / 1300'
-            }
-        } else if (panCountValue == 4) {
-            if (oyaElement.checked) {
-                resultText = '2600 ALL';
-            } else {
-                resultText = '1300 / 2600'
-            }
         }
-        resultTextElement.textContent = "(20) " + resultText;
-        return;
     }
 
     if (hwaryoCheckboxElements[0].checked) {
@@ -225,8 +260,10 @@ function scoreCalc() {
         }
     }
 
-    if (headElement.checked) {
+    if (headElements[0].checked) {
         score += 2;
+    } else if (headElements[1].checked) {
+        score += 4;
     }
 
     if (daegiElement.checked) {
@@ -238,6 +275,10 @@ function scoreCalc() {
     }
 
     score = Math.ceil(score / 10) * 10;
+
+    if (score > 110) {
+        score = 110;
+    }
 
     if (panCountValue > 4 || panCountValue === 4 && score >= 40 || panCountValue === 3 && score >= 70) {
         if (panCountValue > 5 && panCountValue < 8) {
