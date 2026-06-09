@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  overflow-x: hidden;
 }
 
 nav a.active {
@@ -11,20 +12,6 @@ nav a.active {
 
 .active {
   background-color: rgba(99, 99, 99, 0.8);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  text-align: center;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  padding: 0 8px;
 }
 
 header {
@@ -45,9 +32,24 @@ nav a {
   font-weight: bold;
 }
 
+/* container는 각 페이지 CSS에서 정의 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  text-align: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 4px;
+}
+
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   color: #333;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
