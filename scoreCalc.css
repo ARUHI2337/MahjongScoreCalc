@@ -1,13 +1,12 @@
-/* ===== 기본 리셋 ===== */
 * {
   box-sizing: border-box;
 }
 
-/* ===== 전체 레이아웃 ===== */
 body {
   overflow-x: hidden;
 }
 
+/* 전체 컨테이너 */
 .container {
   width: 100%;
   max-width: 480px;
@@ -19,11 +18,13 @@ body {
 }
 
 h1 {
-  font-size: 1.8em;
-  margin: 10px 0;
+  font-size: 1.5em;
+  margin: 6px 0 8px 0;
+  color: #333;
+  text-align: center;
 }
 
-/* ===== 테이블 래퍼 ===== */
+/* 테이블 래퍼 */
 .table-container,
 .table-wrapper {
   width: 100%;
@@ -32,6 +33,7 @@ h1 {
 .table-wrapper {
   border: 1px solid white;
   overflow: hidden;
+  margin-bottom: 2px;
 }
 
 .table-content {
@@ -45,7 +47,7 @@ h1 {
   min-width: 0;
 }
 
-/* ===== 테이블 공통 ===== */
+/* 테이블 공통 */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -56,31 +58,29 @@ th, td {
   border: 1px solid white;
   text-align: center;
   padding: 0;
-  height: 44px;
-  overflow: hidden;
+  height: 36px;
 }
 
-/* ===== 회색 헤더 셀 ===== */
+/* 회색 헤더 셀 */
 th.specific-class,
 tr:first-child th.specific-class,
 tr:first-child td.specific-class,
 tr:not(:first-child) th.specific-class,
 tr:not(:first-child) td:first-child.specific-class {
   background-color: rgba(99, 99, 99, 0.8);
-  padding: 4px 2px;
+  padding: 2px 4px;
   color: white;
   font-weight: bold;
-  font-size: 0.85em;
-  white-space: nowrap;
+  font-size: 0.8em;
 }
 
-/* ===== 입력 셀 (밝은 회색) ===== */
+/* 입력 셀 */
 td:not(:first-child),
 tr:not(:first-child) td:not(:first-child) {
   background-color: rgba(215, 215, 215, 0.8);
 }
 
-/* ===== 체크박스 ===== */
+/* 체크박스 */
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -102,9 +102,8 @@ tr:not(:first-child) td:not(:first-child) {
 
 .checkmark {
   position: relative;
-  width: 28px;
-  height: 28px;
-  background-color: transparent;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
 }
 
@@ -112,10 +111,10 @@ tr:not(:first-child) td:not(:first-child) {
   content: "";
   position: absolute;
   display: none;
-  left: 8px;
-  top: 3px;
-  width: 8px;
-  height: 14px;
+  left: 7px;
+  top: 2px;
+  width: 7px;
+  height: 13px;
   border: solid black;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
@@ -125,7 +124,7 @@ tr:not(:first-child) td:not(:first-child) {
   display: block;
 }
 
-/* ===== 셀렉트 ===== */
+/* 셀렉트 */
 .specific-class2 {
   height: 100%;
   width: 100%;
@@ -134,10 +133,10 @@ tr:not(:first-child) td:not(:first-child) {
 
 .specific-class2 select {
   width: 100%;
-  height: 44px;
+  height: 36px;
   background: none;
   border: none;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   color: #000;
   text-align: center;
@@ -150,9 +149,9 @@ tr:not(:first-child) td:not(:first-child) {
 .specific-class2::after {
   position: absolute;
   content: '';
-  width: 7px;
-  height: 7px;
-  right: 6px;
+  width: 6px;
+  height: 6px;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
   border-bottom: 2px solid #fff;
@@ -164,25 +163,25 @@ option {
   text-align: left;
 }
 
-/* ===== 버튼 ===== */
+/* 버튼 */
 input[type="submit"], button {
-  padding: 10px 20px;
+  padding: 8px 18px;
   background-color: #333;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 10px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
 }
 
-/* ===== 결과 텍스트 ===== */
+/* 결과 텍스트 */
 #resultText {
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 10px;
   background-color: #f2f2f2;
   border: 2px solid #555;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 #resultText:empty {
@@ -191,15 +190,14 @@ input[type="submit"], button {
   padding: 0;
 }
 
-/* ===== 판수 변동 목록 ===== */
-.left-align-text p {
-  text-align: left;
-  margin: 0 0 4px 0;
-  font-size: 0.9em;
+/* 머리/대기 높이 맞추기 */
+.table-content {
+  align-items: stretch;
 }
 
-/* ===== 필러 행 ===== */
-tr.filler-row th {
-  height: auto;
-  flex: 1;
+/* 판수 변동 목록 */
+.left-align-text p {
+  text-align: left;
+  margin: 0 0 3px 0;
+  font-size: 0.82em;
 }
