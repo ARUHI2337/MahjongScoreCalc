@@ -6,7 +6,6 @@ body {
   overflow-x: hidden;
 }
 
-/* 전체 컨테이너 */
 .container {
   width: 100%;
   max-width: 480px;
@@ -18,22 +17,23 @@ body {
 }
 
 h1 {
-  font-size: 1.5em;
-  margin: 6px 0 8px 0;
+  font-size: 1.3em;
+  margin: 4px 0 6px 0;
   color: #333;
   text-align: center;
 }
 
-/* 테이블 래퍼 */
-.table-container,
+/* 섹션 블록마다 둥근 모서리 */
 .table-wrapper {
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3px;
+  border: 1px solid white;
 }
 
-.table-wrapper {
-  border: 1px solid white;
-  overflow: hidden;
-  margin-bottom: 2px;
+.table-container {
+  width: 100%;
 }
 
 .table-content {
@@ -58,7 +58,7 @@ th, td {
   border: 1px solid white;
   text-align: center;
   padding: 0;
-  height: 36px;
+  height: 30px;
 }
 
 /* 회색 헤더 셀 */
@@ -68,10 +68,11 @@ tr:first-child td.specific-class,
 tr:not(:first-child) th.specific-class,
 tr:not(:first-child) td:first-child.specific-class {
   background-color: rgba(99, 99, 99, 0.8);
-  padding: 2px 4px;
+  padding: 1px 3px;
   color: white;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.78em;
+  line-height: 1.2;
 }
 
 /* 입력 셀 */
@@ -102,8 +103,8 @@ tr:not(:first-child) td:not(:first-child) {
 
 .checkmark {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 
@@ -111,10 +112,10 @@ tr:not(:first-child) td:not(:first-child) {
   content: "";
   position: absolute;
   display: none;
-  left: 7px;
+  left: 6px;
   top: 2px;
-  width: 7px;
-  height: 13px;
+  width: 6px;
+  height: 12px;
   border: solid black;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
@@ -133,10 +134,10 @@ tr:not(:first-child) td:not(:first-child) {
 
 .specific-class2 select {
   width: 100%;
-  height: 36px;
+  height: 30px;
   background: none;
   border: none;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   color: #000;
   text-align: center;
@@ -165,7 +166,7 @@ option {
 
 /* 버튼 */
 input[type="submit"], button {
-  padding: 8px 18px;
+  padding: 8px 16px;
   background-color: #333;
   color: #fff;
   border: none;
@@ -173,15 +174,16 @@ input[type="submit"], button {
   border-radius: 10px;
   font-weight: bold;
   font-size: 14px;
+  margin-top: 6px;
 }
 
 /* 결과 텍스트 */
 #resultText {
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 10px;
   background-color: #f2f2f2;
   border: 2px solid #555;
-  font-size: 1em;
+  font-size: 0.95em;
 }
 
 #resultText:empty {
@@ -190,14 +192,18 @@ input[type="submit"], button {
   padding: 0;
 }
 
-/* 머리/대기 높이 맞추기 */
-.table-content {
+/* 머리/대기: 각 행 높이를 명시해서 높이 일치 */
+.head-wait-wrapper .table-content {
   align-items: stretch;
 }
 
 /* 판수 변동 목록 */
+.left-align-text {
+  margin-bottom: 8px;
+}
+
 .left-align-text p {
   text-align: left;
-  margin: 0 0 3px 0;
-  font-size: 0.82em;
+  margin: 0 0 2px 0;
+  font-size: 0.78em;
 }
