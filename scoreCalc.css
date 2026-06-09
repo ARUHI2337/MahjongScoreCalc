@@ -2,27 +2,39 @@ table {
   border-collapse: collapse;
   border-radius: 12px;
   overflow: hidden;
+  width: 100%;
+}
+
+.table-container {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .table-wrapper {
   border: 1px solid white;
   overflow: hidden;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* 오야+판수 / 머리+대기 같은 높이 나란히 배치 */
 .table-content {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.table-content table {
+  flex: 1;
 }
 
 .table-content button {
   margin-top: 20px;
   margin-bottom: 20px;
-  /* 다른 스타일 속성들 */
 }
 
 th,
@@ -54,7 +66,7 @@ td:not(:first-child) {
   height: 100%;
 }
 
-input[type="submit"],button {
+input[type="submit"], button {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: #333;
@@ -101,7 +113,7 @@ td input[type="text"] {
   left: 50%;
   height: 40px;
   width: 40px;
-  transform: translate(-50%,-37%);
+  transform: translate(-50%, -37%);
   background-color: transparent;
 }
 
@@ -140,6 +152,34 @@ td input[type="text"] {
 }
 
 #resultText:empty {
-  background-color: transparent; /* 텍스트가 없을 때 투명으로 설정 */
+  background-color: transparent;
   border: none;
+}
+
+/* 모바일 레이아웃 */
+.container {
+  width: 100%;
+  max-width: 480px;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+/* 오야+판수 행 */
+.oya-pansu {
+  width: 100%;
+}
+
+/* 머리/대기 높이 맞추기 */
+.table-content {
+  align-items: stretch;
+}
+
+.table-content table {
+  height: 100%;
+}
+
+/* 필러 행 스타일 */
+tr.filler-row th {
+  flex: 1;
+  height: auto;
 }
