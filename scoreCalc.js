@@ -779,7 +779,7 @@ function scoreCalc() {
                 if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
                     resultText = '3600';
                 } else {
-                    resultText = '9000 / 1800';
+                    resultText = '900 / 1800';
                 }
             } else if (panCountValue === 2) {
                 if (hwaryoCheckboxElements[0].checked || hwaryoCheckboxElements[1].checked) {
